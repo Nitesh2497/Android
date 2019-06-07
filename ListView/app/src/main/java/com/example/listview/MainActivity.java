@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         lvTeachers = findViewById(R.id.lvTeachers);
         TeacherAdapter teacherAdapter = new TeacherAdapter();
         lvTeachers.setAdapter(teacherAdapter);
@@ -51,12 +52,11 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             //Process of taking a xml file and converting it to a ListView is called inflating a view
             View itemView = getLayoutInflater().inflate(R.layout.list_item_teacher_1,parent,false);
-
             TextView tvName = itemView.findViewById(R.id.tvName);
             TextView tvCourse = itemView.findViewById(R.id.tvCourse);
-            tvName.setText(getItem(position).getName());
-            tvCourse.setText(getItem(position).getCourse());
-
+            Teachers teachers = getItem(position);
+            tvName.setText(teachers.getName());
+            tvCourse.setText(teachers.getCourse());
             return itemView;
         }
     }

@@ -15,5 +15,6 @@ class MainActivity : AppCompatActivity() {
             var result = etVar1.text.toString().toInt() + etVar2.text.toString().toInt()
             tvResult.text = result.toString()
         }
+
     }
 }
